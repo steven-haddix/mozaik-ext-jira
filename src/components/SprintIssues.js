@@ -15,10 +15,10 @@ export default class BuildHistory extends Component {
         apiError: PropTypes.object,
     }
 
-    static getApiRequest({ board }) {
+    static getApiRequest({ boardId }) {
         return {
-            id: `jira.sprint.${board}`,
-            params: { board },
+            id: `jira.sprint.${boardId}`,
+            params: { boardId },
         }
     }
 
