@@ -1,10 +1,8 @@
-import SprintIssues from './SprintIssues'
+import SprintStatusPie from './SprintStatusPie'
 
-//import MergeRequestsGauge  from './MergeRequestsGauge'
 import * as labels from './labels'
 
 export default {
-    SprintIssues,
-    //MergeRequestsGauge,
+    SprintStatusPie,
     ...labels,
 }
