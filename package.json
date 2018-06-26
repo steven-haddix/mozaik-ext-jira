@@ -86,6 +86,6 @@
     "fmt": "prettier --print-width=100 --tab-width=4 --bracket-spacing --no-semi --trailing-comma es5 --single-quote --color --write \"{src,test}/**/*.js\" 'client.js'",
     "fmt:check": "prettier --print-width=100 --tab-width=4 --bracket-spacing --no-semi --trailing-comma es5 --single-quote --list-different \"{src,test}/**/*.js\" 'client.js'",
     "prepublishOnly": "npm run lint && npm test && npm run build",
-    "version": "echo ${npm_package_version}",
+    "version": "echo ${npm_package_version}"
   }
 }
