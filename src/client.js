@@ -40,7 +40,7 @@ const client = mozaik => {
         },
         issues({ sprintId }) {
              return buildApiRequest(`/sprint/${encodeURIComponent(sprintId)}/issue?fields=status,issueType,assignee`)
-                 .then(res => res.issues)
+                 .then(res => res.body.issues)
         },
         sprint({ boardId }) {
             return Promise.all([

@@ -39,7 +39,7 @@ export default class BuildHistory extends Component {
             body = (
                 <div>
                     {sprint.issues.map(issue =>
-                        <SprintIssue key={sprint.id} issue={issue} />
+                        <SprintIssue key={issue.id} issue={issue} />
                     )}
                 </div>
             )
