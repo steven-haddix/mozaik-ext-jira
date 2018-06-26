@@ -19,7 +19,7 @@ const client = mozaik => {
             json: true,
             resolveWithFullResponse: true,
             headers: {
-                'Authorization': config.get('jira.token'),
+                'Authorization': `Basic ${config.get('jira.token')}`,
             },
         }
 
