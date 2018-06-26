@@ -11,7 +11,7 @@ const client = mozaik => {
     mozaik.loadApiConfig(config)
 
     const buildApiRequest = (path, params) => {
-        const url = config.get('jira.baseUrl')
+        const url = (params && params.baseUrl) ? params.baseUrl : config.get('jira.baseUrl');
 
         const options = {
             uri: `${url}${path}`,
@@ -61,6 +61,16 @@ const client = mozaik => {
                 sprint,
             }))
         },
+        burnDown({ boardId }) {
+            return buildApiRequest(`/board/${encodeURIComponent(boardId)}/sprint?state=active`)
+                .then(res => res.body.values[0])
+                .then(({ id }) => {
+                    return buildApiRequest(`/rapid/charts/scopechangeburndownchart.json?rapidViewId=${boardId}&sprintId=${id}`,
+                        { baseUrl: 'https://wentrack.atlassian.net/rest/greenhopper/1.0'} )
+                        .then(res => ({ burnDown: res.body }))
+                })
+
+        }
     }
 
     return operations

@@ -48,6 +48,7 @@
   "devDependencies": {
     "@mozaik/babel-preset": "^1.0.0-alpha.6",
     "@mozaik/ui": "^2.0.0-alpha.11",
+    "@nivo/line": "^0.42.1",
     "@nivo/pie": "^0.42.1",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
