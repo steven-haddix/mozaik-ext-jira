@@ -208,7 +208,7 @@ const replaySprintChanges = (sprintMap, changes) => {
     Object.keys(sprintMap.days).forEach((day, index) => {
         const currentDay = sprintMap.days[day];
 
-        if (!moment(currentDay).isSameOrBefore(monent())) {
+        if (!moment(currentDay).isSameOrBefore(moment())) {
             return;
         }
 
