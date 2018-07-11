@@ -37,7 +37,7 @@ export default class SprintStatusPie extends Component {
                 return {
                     color: "#F36955",
                     x: idx + 1,
-                    y: burnDownData.days[key].remainingPoints || null
+                    y: burnDownData.days[key].remainingPoints !== undefined ? burnDownData.days[key].remainingPoints : null
                 }
             })
 
