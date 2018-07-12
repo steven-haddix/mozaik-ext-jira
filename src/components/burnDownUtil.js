@@ -208,7 +208,10 @@ const replaySprintChanges = (sprintMap, changes) => {
     Object.keys(sprintMap.days).forEach((day, index) => {
         const currentDay = sprintMap.days[day];
 
+        // Handle future sprint days by removing any points or stories. They haven't happened yet.
         if (!moment(day).isSameOrBefore(moment())) {
+            currentDay.remainingPoints = null;
+            currentDay.remainingStories = null;
             return;
         }
 
